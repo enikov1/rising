@@ -47,16 +47,20 @@ let windowWidthStatus = true,
 
 window.addEventListener('resize', () => {
 
-	windowWidth = (window.outerWidth >= 1025) ? windowWidthStatus = false : windowWidthStatus = true;
+	windowWidth = (window.outerWidth >= 1200) ? windowWidthStatus = false : windowWidthStatus = true;
 
-	headerBurgetActive();
+	
 	if(!windowWidth) {
 		classHeaderTop.classList.remove('header_menu_active_child');
 		classHeaderTop.classList.remove('header_menu_active');
 
 		headerMenuActiveMenu();
 
-		// console.log(1);
+		headerMenuActiveNotTarget();
+	} else {
+		classHeaderMenuChild.classList.remove('active_desktop');
+		headerBurgetActive();
+		// headerBurgetActive();
 	}
 });
 if(window.outerWidth < 1200) {
