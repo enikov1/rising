@@ -21,6 +21,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-q:before {
+  content: "";
+}
+
+.icon-minus:before {
+  content: "";
+}
+
 .icon-arrow-left:before {
   content: "";
   color: #fff;

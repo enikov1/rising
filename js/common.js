@@ -1,5 +1,7 @@
 'use strict';
 
+const desktopWidth = 1200;
+
 const headerBurger = document.getElementById('header_nav_trigger'),
 	  classHeaderTop = document.querySelector('.header__top'),
 	  buttonActiveChild = document.getElementById('menu__active_child'),
@@ -47,7 +49,7 @@ let windowWidthStatus = true,
 
 window.addEventListener('resize', () => {
 
-	windowWidth = (window.outerWidth >= 1200) ? windowWidthStatus = false : windowWidthStatus = true;
+	windowWidth = (window.outerWidth >= desktopWidth) ? windowWidthStatus = false : windowWidthStatus = true;
 
 	
 	if(!windowWidth) {
@@ -63,7 +65,7 @@ window.addEventListener('resize', () => {
 		// headerBurgetActive();
 	}
 });
-if(window.outerWidth < 1200) {
+if(window.outerWidth < desktopWidth) {
 	headerBurgetActive();
 } else {
 	headerMenuActiveMenu();
@@ -74,8 +76,9 @@ if(window.outerWidth < 1200) {
 // header menu fixed
 
 const headerScrollPos = () => {
-	let header = document.querySelector('.header');
-	if(window.pageYOffset >= 500) {
+	let header = document.querySelector('.header'),
+		headerHeight = header.clientHeight;
+	if(window.pageYOffset >= headerHeight) {
 		if(header.className != 'header_fixed') {
 			header.classList.add('header_fixed');
 		}
@@ -94,7 +97,7 @@ headerScrollPos();
 // Slider
 
 let SliderMain = null,
-	mediaQuerySize = 1200;
+	mediaQuerySize = desktopWidth;
 
 const sliderMainInit = () => {
 	if(!SliderMain) {
@@ -108,7 +111,7 @@ const sliderMainInit = () => {
 			},
 
 			breakpoints: {
-				1200: {
+				desktopWidth: {
 					slidesPerView: 3,
 					spaceBetween: 127,
 				}
@@ -136,7 +139,7 @@ window.addEventListener('load', () => {
 window.addEventListener('resize', () => {
 	let windowWidthSlide = window.outerWidth;
 	if(windowWidthSlide <= mediaQuerySize) {
-		console.log(2);
+		// console.log(2);
 		sliderMainInit();
 	} else {
 		sliderMainDestroy();
@@ -151,12 +154,12 @@ const reviews = new Swiper('#reviews', {
 	spaceBetween: 20,
 
 	navigation: {
-		prevEl: '.swiper-nav-prev',
-		nextEl: '.swiper-nav-next',
+		prevEl: '#reviews .swiper-nav-prev',
+		nextEl: '#reviews .swiper-nav-next',
 	},
 
 	breakpoints: {
-		1200: {
+		desktopWidth: {
 			slidesPerView: 3,
 			spaceBetween: 33,
 		}
@@ -175,6 +178,17 @@ setTimeout(() => {
     });
 }, 300);
 
+// facts
+
+const facts = new Swiper('#facts', {
+	slidesPerView: 1,
+	spaceBetween: 20,
+
+	navigation: {
+		prevEl: '#facts .swiper-nav-prev',
+		nextEl: '#facts .swiper-nav-next',
+	}
+});
 
 // form events
 
@@ -182,28 +196,31 @@ setTimeout(() => {
 
 const form_subs = document.getElementById('form_subscribe');
 const emailReg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-form_subs.addEventListener('submit', (event) => {
-	event.preventDefault();
+if(form_subs) {
+	form_subs.addEventListener('submit', (event) => {
+		event.preventDefault();
 
-	let fieldEmail = document.querySelectorAll('.field_email');
+		let fieldEmail = document.querySelectorAll('.field_email');
 
-	fieldEmail.forEach(e => {
-		if(emailReg.test(e.value) == false) {
-			if(!e.parentNode.querySelector('.field_error')) {
-				e.insertAdjacentHTML('afterEnd', '<span class="field_error">Ошибка! Неверный формат</span>');
-				setTimeout(() => {
-					e.parentNode.querySelector('.field_error').remove();
-				},2000);
+		fieldEmail.forEach(e => {
+			if(emailReg.test(e.value) == false) {
+				if(!e.parentNode.querySelector('.field_error')) {
+					e.insertAdjacentHTML('afterEnd', '<span class="field_error">Ошибка! Неверный формат</span>');
+					setTimeout(() => {
+						e.parentNode.querySelector('.field_error').remove();
+					},2000);
+				}
+				
+				
+				return false;
+			} else {
+				event.target.classList.add('form_send_success');
 			}
-			
-			
-			return false;
-		} else {
-			event.target.classList.add('form_send_success');
-		}
-	});
+		});
 
-});
+	});
+}
+
 
 
 const form_success_button = document.querySelector('.form_success button');
@@ -286,27 +303,30 @@ const validateFieldLength = (field) => {
 	}
 }
 
-let field_name = feedback_form.querySelector('#field_name'),
+if(feedback_form) {
+	let field_name = feedback_form.querySelector('#field_name'),
 		field_email = feedback_form.querySelector('#field_email'),
 		field_message = feedback_form.querySelector('#field_message');
 
-validateField(field_name);
-validateField(field_email);
-validateField(field_message);
+	validateField(field_name);
+	validateField(field_email);
+	validateField(field_message);
 
-feedback_form.addEventListener('submit', (event) => {
-	event.preventDefault();
+	feedback_form.addEventListener('submit', (event) => {
+		event.preventDefault();
 
-	validateFieldLength(field_name);
-	validateFieldLength(field_email);
-	validateFieldLength(field_message);
+		validateFieldLength(field_name);
+		validateFieldLength(field_email);
+		validateFieldLength(field_message);
 
-	if(event.target.querySelector('.error')) {
-		return false;
-	} else {
-		document.querySelector('#popup_feedback_success').classList.add('popup_active');
-	}
-});
+		if(event.target.querySelector('.error')) {
+			return false;
+		} else {
+			document.querySelector('#popup_feedback_success').classList.add('popup_active');
+		}
+	});
+}
+
 
 const form_subscribe_footer = document.querySelector('#form_subscribe_footer');
 
@@ -368,5 +388,98 @@ const cookie_wrap = document.querySelector('.cookie_info'),
 button_cookie_info.addEventListener('click', () => cookie_wrap.classList.add('cookie_info__show'));
 button_cookie_ok.addEventListener('click', () => cookie_wrap.remove());
 
+
+
+// slider product
+
+const swiper_product = new Swiper('#swiper_product', {
+	slidesPerView: 2,
+	spaceBetween: 64,
+	loop: true,
+
+	navigation: {
+		prevEl: '#swiper_product .swiper-nav-prev',
+		nextEl: '#swiper_product .swiper-nav-next',
+	},
+
+	breakpoints: {
+		768: {
+			slidesPerView: 3,
+			spaceBetween: 96,
+		},
+		desktopWidth: {
+			slidesPerView: 6,
+			spaceBetween: 48,
+		}
+	}
+});
+
+// slider goods about
+
+const goods_slider = new Swiper('#goods_slider', {
+	slidesPerView: 1,
+	spaceBetween: 20,
+
+	on: {
+		init: (e) => {
+			if(e.slides.length == 1) {
+				document.querySelector('#goods_slider .swiper-nav').classList.add('hidden');
+				// e.destroy();
+			}
+		}
+	},
+
+	navigation: {
+		prevEl: '#goods_slider .swiper-nav-prev',
+		nextEl: '#goods_slider .swiper-nav-next',
+	}
+});
+
+
+// accordion
+
+const accordion_item = document.querySelectorAll('.accordion__item');
+if(accordion_item) {
+	accordion_item.forEach(e => {
+		let button = e.querySelector('.title');
+		button.addEventListener('click', (event) => e.classList.toggle('active'));
+	});
+}
+
+
+// catalog events
+
+const button_catalog_close_nav = document.querySelectorAll('.catalog_close'),
+	  catalog_nav = document.querySelectorAll('.catalog__left'),
+	  catalog_nav_mod_1 = document.querySelector('#catalog_mod_1'),
+	  catalog_nav_mod_2 = document.querySelector('#catalog_mod_2'),
+	  button_on_catalog_mod_1 = document.querySelector('#button_on_catalog_mod_1'),
+	  button_on_catalog_mod_2 = document.querySelector('#button_on_catalog_mod_2');
+
+const catalog_menu_active = () => {
+	if(button_on_catalog_mod_1 && button_on_catalog_mod_2) {
+		button_on_catalog_mod_1.addEventListener('click', () => catalog_nav_mod_1.classList.add('active'));
+		button_on_catalog_mod_2.addEventListener('click', () => catalog_nav_mod_2.classList.add('active'));
+	}
+
+	if(button_catalog_close_nav) {
+		button_catalog_close_nav.forEach(e=>{
+			e.addEventListener('click', () => {
+				catalog_nav.forEach(e=> e.classList.remove('active'));
+			});
+		});
+		
+	}
+}
+
+if(window.outerWidth < desktopWidth) {
+	catalog_menu_active();
+}
+
+window.addEventListener('resize', () => {
+	if(window.outerWidth < desktopWidth) {
+		catalog_menu_active();
+	}
+});
 
 
