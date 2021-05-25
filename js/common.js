@@ -1,6 +1,6 @@
 'use strict';
 
-const desktopWidth = 1200;
+// const 1200 = 1200;
 
 const headerBurger = document.getElementById('header_nav_trigger'),
 	  classHeaderTop = document.querySelector('.header__top'),
@@ -49,7 +49,7 @@ let windowWidthStatus = true,
 
 window.addEventListener('resize', () => {
 
-	windowWidth = (window.outerWidth >= desktopWidth) ? windowWidthStatus = false : windowWidthStatus = true;
+	windowWidth = (window.outerWidth >= 1200) ? windowWidthStatus = false : windowWidthStatus = true;
 
 	
 	if(!windowWidth) {
@@ -65,7 +65,7 @@ window.addEventListener('resize', () => {
 		// headerBurgetActive();
 	}
 });
-if(window.outerWidth < desktopWidth) {
+if(window.outerWidth < 1200) {
 	headerBurgetActive();
 } else {
 	headerMenuActiveMenu();
@@ -96,55 +96,61 @@ headerScrollPos();
 
 // Slider
 
-let SliderMain = null,
-	mediaQuerySize = desktopWidth;
+const slider_dom = document.querySelector('#slider');
 
-const sliderMainInit = () => {
-	if(!SliderMain) {
-		SliderMain = new Swiper('#slider', {
-			slidesPerView: 1,
-			spaceBetween: 10,
+if(slider_dom) {
+	let SliderMain = null,
+	mediaQuerySize = 1200;
 
-			pagination: {
-				el: '.swiper-page',
-				clickable: true
-			},
+	const sliderMainInit = () => {
+		if(!SliderMain) {
+			SliderMain = new Swiper('#slider', {
+				slidesPerView: 1,
+				spaceBetween: 10,
 
-			breakpoints: {
-				desktopWidth: {
-					slidesPerView: 3,
-					spaceBetween: 127,
+				pagination: {
+					el: '.swiper-page',
+					clickable: true
+				},
+
+				breakpoints: {
+					1200: {
+						slidesPerView: 3,
+						spaceBetween: 127,
+					}
 				}
-			}
-		});
-	}
-};
+			});
+		}
+	};
 
-const sliderMainDestroy = () => {
-	if(SliderMain) {
-		SliderMain.destroy();
-		SliderMain = null;
+	const sliderMainDestroy = () => {
+		if(SliderMain) {
+			SliderMain.destroy();
+			SliderMain = null;
+		}
 	}
+
+	window.addEventListener('load', () => {
+		let windowWidthSlide = window.outerWidth;
+		if(windowWidthSlide <= mediaQuerySize) {
+			sliderMainInit();
+		} else {
+			sliderMainDestroy();
+		}
+	});
+
+	window.addEventListener('resize', () => {
+		let windowWidthSlide = window.outerWidth;
+		if(windowWidthSlide <= mediaQuerySize) {
+			// console.log(2);
+			sliderMainInit();
+		} else {
+			sliderMainDestroy();
+		}
+	});
 }
 
-window.addEventListener('load', () => {
-	let windowWidthSlide = window.outerWidth;
-	if(windowWidthSlide <= mediaQuerySize) {
-		sliderMainInit();
-	} else {
-		sliderMainDestroy();
-	}
-});
 
-window.addEventListener('resize', () => {
-	let windowWidthSlide = window.outerWidth;
-	if(windowWidthSlide <= mediaQuerySize) {
-		// console.log(2);
-		sliderMainInit();
-	} else {
-		sliderMainDestroy();
-	}
-});
 
 
 // reviews
@@ -159,7 +165,7 @@ const reviews = new Swiper('#reviews', {
 	},
 
 	breakpoints: {
-		desktopWidth: {
+		1200: {
 			slidesPerView: 3,
 			spaceBetween: 33,
 		}
@@ -407,7 +413,7 @@ const swiper_product = new Swiper('#swiper_product', {
 			slidesPerView: 3,
 			spaceBetween: 96,
 		},
-		desktopWidth: {
+		1200: {
 			slidesPerView: 6,
 			spaceBetween: 48,
 		}
@@ -472,12 +478,12 @@ const catalog_menu_active = () => {
 	}
 }
 
-if(window.outerWidth < desktopWidth) {
+if(window.outerWidth < 1200) {
 	catalog_menu_active();
 }
 
 window.addEventListener('resize', () => {
-	if(window.outerWidth < desktopWidth) {
+	if(window.outerWidth < 1200) {
 		catalog_menu_active();
 	}
 });
