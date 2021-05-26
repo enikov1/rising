@@ -57,10 +57,7 @@
               </ul>
             </div>
           </div>
-          <div class="header_logo"><a class="logo" href="#">
-              <picture>
-                <source srcset="./img/logo_x3.png" media="(min-width: 768px)"><img src="./img/logo.png" alt="image">
-              </picture></a></div>
+          <div class="header_logo"><a class="logo" href="#"><img src="./img/logo.svg" alt="image"></a></div>
           <div class="header_bay"><a class="icon" href="#"><i class="icon-bay"></i></a><a class="button_primary" href="#">Купить у партнера</a></div>
         </div>
         <div class="header__bottom">
@@ -246,7 +243,12 @@
       </div>
     </section>
     <section class="news">
-      <div class="news__top"><img src="./img/news_x3.jpg" alt="image"></div>
+      <div class="news__top"><span>Новинка!</span>
+        <picture>
+          <source srcset="./img/news_x3.jpg" media="(min-width: 1200px)">
+          <source srcset="./img/news_x2.jpg" media="(min-width: 768px)"><img src="./img/news_x1.jpg" alt="image">
+        </picture>
+      </div>
       <div class="news__bottom">
         <h2>Восполните недостаток солнца</h2>
         <p>Уникальная разработка в линейке Risingstar — подъязычный спрей Витамин D3 500 IU. Произведено по стандартам GMP и ISO 22000, без ГМО и красителей</p><a class="button_primary" href="#">Подробнее о продукте </a>
@@ -652,7 +654,7 @@
         <div class="footer__top">
           <div class="flex flex-wrap">
             <div class="footer__top-left">
-              <div class="logo"><a href="/"><img src="./img/logo_white.png" alt="logo"></a></div>
+              <div class="logo"><a href="/"><img src="./img/logo_white.svg" alt="logo"></a></div>
               <div class="links"><a href="tel:74993433452">+7 (499) 343-34-52</a><a href="mailto:hello@risingstarvitamin.com">hello@risingstarvitamin.com</a></div>
               <div class="copy"><span>&copy; RISINGSTAR.</span></div>
             </div>
@@ -731,7 +733,9 @@
         <p>Мы используем файлы cookie  для подбора подходящих вам товаров, аналитики и рекламы.</p><a href="#">Наша политика конфиденциальности</a>
       </div>
     </div>
-    <script src="./libs/swiper/swiper-bundle.min.js" defer></script>
-    <script src="./js/common.js" defer></script>
+    <script src="./libs/swiper/swiper-bundle.min.js"></script>
+    <script src="./libs/sticky-sidebar/sticky-sidebar.js"></script>
+    <script src="./libs/simpleParallax/simpleParallax.min.js"></script>
+    <script src="./js/common.js"></script>
   </body>
 </html>

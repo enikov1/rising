@@ -5,13 +5,20 @@
 const headerBurger = document.getElementById('header_nav_trigger'),
 	  classHeaderTop = document.querySelector('.header__top'),
 	  buttonActiveChild = document.getElementById('menu__active_child'),
-	  buttonActiveChildLink = document.querySelector('#menu__active_child a'),
-	  classHeaderMenuChild = document.querySelector('.header_menu__child');
+	  buttonActiveChildLink = document.querySelector('#menu__active_child a');
+
+const catalog_header = document.querySelector('.catalog__header');
 
 const headerBurgetActive = () => {
-	headerBurger.addEventListener('click', () => {
-		classHeaderTop.classList.toggle('header_menu_active');
 
+	
+	headerBurger.addEventListener('click', () => {
+
+		// document.querySelector('body').classList.toggle('overflow-none');
+		if(catalog_header) catalog_header.setAttribute('style', 'z-index: 1;');
+		
+
+		classHeaderTop.classList.toggle('header_menu_active');
 		if(classHeaderTop.classList.contains('header_menu_active_child')) {
 			classHeaderTop.classList.remove('header_menu_active_child');
 			classHeaderTop.classList.add('header_menu_active');
@@ -24,14 +31,18 @@ const headerBurgetActive = () => {
 }
 
 const headerMenuActiveMenu = () => {
+	let classHeaderMenuChild = document.querySelector('.header_menu__child');
 	buttonActiveChildLink.addEventListener('click', (event) => {
 		event.preventDefault();
 
 		classHeaderMenuChild.classList.toggle('active_desktop');
+
 	});
 }
 
 const headerMenuActiveNotTarget = () => {
+	let classHeaderMenuChild = document.querySelector('.header_menu__child');
+
 	window.addEventListener('click', (event) => {
 		const tg = event.target,
 			  isButtonLink = (tg.parentNode.getAttribute("id") == "menu__active_child"),
@@ -43,55 +54,97 @@ const headerMenuActiveNotTarget = () => {
 	});
 }
 
-let windowWidthStatus = true,
-	windowWidth = false;
+headerMenuActiveMenu();
+
+headerMenuActiveNotTarget();
+
+headerBurgetActive();
  
+let widthStatus = false;
 
 window.addEventListener('resize', () => {
 
-	windowWidth = (window.outerWidth >= 1200) ? windowWidthStatus = false : windowWidthStatus = true;
-
+	let classHeaderMenuChild = document.querySelector('.header_menu__child');
 	
-	if(!windowWidth) {
+	(window.outerWidth >= 1200) ? widthStatus = false : widthStatus = true;
+
+	if(!widthStatus) {
 		classHeaderTop.classList.remove('header_menu_active_child');
 		classHeaderTop.classList.remove('header_menu_active');
-
-		headerMenuActiveMenu();
-
-		headerMenuActiveNotTarget();
+		
 	} else {
+		classHeaderTop.classList.remove('header_menu_active_child');
 		classHeaderMenuChild.classList.remove('active_desktop');
-		headerBurgetActive();
-		// headerBurgetActive();
 	}
 });
-if(window.outerWidth < 1200) {
-	headerBurgetActive();
-} else {
-	headerMenuActiveMenu();
 
-	headerMenuActiveNotTarget();
-}
 
 // header menu fixed
 
 const headerScrollPos = () => {
 	let header = document.querySelector('.header'),
+		header_product = document.querySelector('.product_header_fixed'),
 		headerHeight = header.clientHeight;
+		// headerMenuActive = document.querySelector('.header_menu_active');
+
 	if(window.pageYOffset >= headerHeight) {
+
+		if(header_product) {
+			if(header_product.className != 'active') {
+				header_product.classList.add('active');
+			}
+		}
+
 		if(header.className != 'header_fixed') {
 			header.classList.add('header_fixed');
 		}
 	} else {
 		header.classList.remove('header_fixed');
+
+		if(header_product) {
+			header_product.classList.remove('active');
+		}
 	}
+
+	
 }
 
-document.addEventListener('scroll', (event) => {
+
+const filterScrollPos = () => {
+	let header = document.querySelector('.header'),
+		headerHeight = header.clientHeight,
+		filterHeight = catalog_header.clientHeight,
+
+		sumHeight = headerHeight + filterHeight;
+
+	if(window.pageYOffset >= sumHeight) {
+		if(catalog_header.className != 'scroll-active') {
+			catalog_header.classList.add('scroll-active');
+		}
+	} else {
+		catalog_header.classList.remove('scroll-active');
+	}
+	
+	if(document.querySelector('.header_menu_active')) {
+		let index = 'z-index: 1;';
+		catalog_header.setAttribute('style', index);
+	}
+	
+}
+
+window.addEventListener('scroll', function() {
 	headerScrollPos();
 });
 
 headerScrollPos();
+
+if(catalog_header) {
+	window.addEventListener('scroll', function() {
+		filterScrollPos();
+	});
+
+	filterScrollPos();
+}
 
 
 // Slider
@@ -158,6 +211,7 @@ if(slider_dom) {
 const reviews = new Swiper('#reviews', {
 	slidesPerView: 1,
 	spaceBetween: 20,
+	loop: true,
 
 	navigation: {
 		prevEl: '#reviews .swiper-nav-prev',
@@ -429,7 +483,9 @@ const goods_slider = new Swiper('#goods_slider', {
 	on: {
 		init: (e) => {
 			if(e.slides.length == 1) {
-				document.querySelector('#goods_slider .swiper-nav').classList.add('hidden');
+				setTimeout(()=> {
+					document.querySelector('#goods_slider .swiper-nav').classList.add('hidden');
+				}, 300);
 				// e.destroy();
 			}
 		}
@@ -442,15 +498,101 @@ const goods_slider = new Swiper('#goods_slider', {
 });
 
 
-// accordion
+// slider researches about
 
-const accordion_item = document.querySelectorAll('.accordion__item');
-if(accordion_item) {
-	accordion_item.forEach(e => {
-		let button = e.querySelector('.title');
-		button.addEventListener('click', (event) => e.classList.toggle('active'));
+const researches_slider = new Swiper('#slider_researches', {
+	slidesPerView: 1,
+	spaceBetween: 20,
+
+	navigation: {
+		prevEl: '#slider_researches .swiper-nav-prev',
+		nextEl: '#slider_researches .swiper-nav-next',
+	}
+});
+
+// slider goods_reviews
+
+const goods_reviews = new Swiper('#goods_reviews', {
+	slidesPerView: 1,
+	spaceBetween: 32,
+
+	navigation: {
+		prevEl: '#goods_reviews .swiper-nav-prev',
+		nextEl: '#goods_reviews .swiper-nav-next',
+	},
+	breakpoints: {
+		1200: {
+			slidesPerView: 2
+		}
+	}
+});
+
+const goods_reviews_wrapper = goods_reviews.wrapperEl;
+
+[].forEach.call(goods_reviews.slides, function(slide) {
+  slide.style.height = "";
+});
+
+setTimeout(() => {
+    [].forEach.call(goods_reviews.slides, function(slide) {
+      slide.style.height = goods_reviews_wrapper.clientHeight + "px";
+    });
+}, 300);
+
+const other_product = document.querySelector('#other_product');
+
+if(other_product) {
+	let SliderOtherProduct = null,
+	mediaQuerySize = 767;
+
+	const sliderOtherProductInit = () => {
+		if(!SliderOtherProduct) {
+			SliderOtherProduct = new Swiper('#other_product', {
+				slidesPerView: 1,
+				spaceBetween: 10,
+
+				navigation: {
+					prevEl: '#other_product .swiper-nav-prev',
+					nextEl: '#other_product .swiper-nav-next',
+				},
+
+				// breakpoints: {
+				// 	1200: {
+				// 		slidesPerView: 3,
+				// 		spaceBetween: 127,
+				// 	}
+				// }
+			});
+		}
+	};
+
+	const sliderOtherProductDestroy = () => {
+		if(SliderOtherProduct) {
+			SliderOtherProduct.destroy();
+			SliderOtherProduct = null;
+		}
+	}
+
+	window.addEventListener('load', () => {
+		let windowWidthSlide = window.outerWidth;
+		if(windowWidthSlide <= mediaQuerySize) {
+			sliderOtherProductInit();
+		} else {
+			sliderOtherProductDestroy();
+		}
+	});
+
+	window.addEventListener('resize', () => {
+		let windowWidthSlide = window.outerWidth;
+		if(windowWidthSlide <= mediaQuerySize) {
+			// console.log(2);
+			sliderOtherProductInit();
+		} else {
+			sliderOtherProductDestroy();
+		}
 	});
 }
+
 
 
 // catalog events
@@ -486,6 +628,43 @@ window.addEventListener('resize', () => {
 	if(window.outerWidth < 1200) {
 		catalog_menu_active();
 	}
+});
+
+// accordion
+
+const position_sticky_block = document.querySelectorAll('.position-sticky');
+
+if(position_sticky_block) {
+	position_sticky_block.forEach(e=> {
+		let stickyEl = new Sticksy('.position-sticky', {
+			topSpacing: 0,
+			listen: true,
+		});
+	});
+}
+
+
+
+const accordion_item = document.querySelectorAll('.accordion__item');
+if(accordion_item) {
+	accordion_item.forEach(e => {
+		let button = e.querySelector('.title');
+		button.addEventListener('click', (event) => {
+			e.classList.toggle('active');
+			stickyEl.hardRefresh();
+		});
+	});
+}
+
+// parallax
+
+const images = document.querySelectorAll('.parallax_overlay img');
+new simpleParallax(images, {
+	scale: 2.5,
+	orientation: 'down',
+	// overflow: true,
+	delay: .6,
+	// transition: 'cubic-bezier(0,0,0,1)'
 });
 
 
