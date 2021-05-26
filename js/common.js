@@ -631,12 +631,12 @@ window.addEventListener('resize', () => {
 });
 
 // accordion
-
+let stickyEl = null;
 const position_sticky_block = document.querySelectorAll('.position-sticky');
 
 if(position_sticky_block) {
 	position_sticky_block.forEach(e=> {
-		let stickyEl = new Sticksy('.position-sticky', {
+			stickyEl = new Sticksy('.position-sticky', {
 			topSpacing: 0,
 			listen: true,
 		});
