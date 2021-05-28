@@ -3589,6 +3589,16 @@ textarea.field {
   font-size: 2rem;
 }
 
+.catalog__header.scroll-active {
+  position: fixed;
+  top: 7.125rem;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 10;
+  padding-top: 0.625rem;
+}
+
 .catalog__info {
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 100%;

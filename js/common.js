@@ -118,16 +118,23 @@ const filterScrollPos = () => {
 		filterHeight = (catalog_header) ? catalog_header.clientHeight : 0,
 		sect_nav = (sect_header) ? sect_header.clientHeight : 0,
 		sumHeight = headerHeight + filterHeight,
-		sumHeightSectNav = headerHeight + sect_nav;
+		sumHeightSectNav = headerHeight + sect_nav,
+		header_wrap = document.querySelector('.header');
+		// scrollStatus = false,
+		// styles = 'top:0px; z-index:'+15;
 
 	if(catalog_header) {
 		if(window.pageYOffset >= sumHeight) {
 			if(catalog_header.className != 'scroll-active') {
 				catalog_header.classList.add('scroll-active');
-				catalog_header.setAttribute('style', 'top:'+classHeaderTop.clientHeight+'px');
+				// catalog_header.setAttribute('style', 'top:'+classHeaderTop.clientHeight+'px; z-index:'+14);
+
+				header_wrap.setAttribute('style', 'opacity: 0');
+				catalog_header.setAttribute('style', 'top:0; z-index:'+14);
 			}
 		} else {
 			catalog_header.classList.remove('scroll-active');
+			header_wrap.removeAttribute('style');
 			catalog_header.removeAttribute('style');
 		}
 	}
@@ -136,10 +143,17 @@ const filterScrollPos = () => {
 		if(window.pageYOffset >= sumHeightSectNav) {
 			if(sect_header.className != 'scroll-active') {
 				sect_header.classList.add('scroll-active');
-				sect_header.setAttribute('style', 'top:'+classHeaderTop.clientHeight+'px');
+				// window.addEventListener('resize', function(){
+				// 	classHeaderTop.setAttribute('style', 'opacity: 0');
+				// 	sect_header.setAttribute('style', 'top:0; z-index:'+14);
+				// });
+				header_wrap.setAttribute('style', 'opacity: 0');
+				sect_header.setAttribute('style', 'top:0; z-index:'+14);
+				// if(scrollStatus == true) sect_header.setAttribute('style', styles);
 			}
 		} else {
 			sect_header.classList.remove('scroll-active');
+			header_wrap.removeAttribute('style');
 			sect_header.removeAttribute('style');
 		}
 	}
@@ -156,7 +170,9 @@ const filterScrollPos = () => {
 window.addEventListener('scroll', function() {
 	headerScrollPos();
 });
-
+window.addEventListener('resize', function() {
+	headerScrollPos();
+});
 headerScrollPos();
 
 if(catalog_header) {

@@ -932,12 +932,7 @@
     display: none;
   }
   .catalog__header.scroll-active {
-    position: fixed;
-    top: 7.125rem;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    z-index: 10;
+    padding-top: 0;
   }
   .catalog__info {
     -webkit-box-flex: 0;
