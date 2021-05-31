@@ -172,8 +172,9 @@ body {
   position: relative;
   font-size: 0.8125rem;
   min-width: 320px;
-  min-height: 100%;
   font-family: "Mplus 1p";
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
 }
 
 .container {

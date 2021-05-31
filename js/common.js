@@ -971,3 +971,13 @@ document.addEventListener("DOMContentLoaded", function() {
 	
 });
 
+// media keyboard
+
+if(window.outerWidth < 900) {
+	let field = document.querySelectorAll('.field');
+
+	field.forEach(e=>{
+		e.addEventListener('focus', () => document.querySelector('html').classList.add('overflow-none'));
+		e.addEventListener('blur', () => document.querySelector('html').classList.remove('overflow-none'));
+	});
+}
