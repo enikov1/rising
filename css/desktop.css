@@ -295,6 +295,12 @@
             justify-content: center;
     margin-bottom: 5.25rem;
   }
+  .numbers__top video {
+    width: 50rem;
+    height: 28.125rem;
+    -webkit-clip-path: none;
+            clip-path: none;
+  }
   .numbers__bottom {
     top: auto;
     z-index: 1;
@@ -1509,6 +1515,14 @@
   }
   .popup_modify .popup_overlay__wrap .items .item:last-child {
     margin-bottom: 0;
+  }
+  .cookie_info {
+    max-width: 24.6875rem;
+    left: 50%;
+    margin-left: -11.375rem;
+  }
+  .cookie_info__first p {
+    max-width: 58%;
   }
   #header_info {
     height: 23.375rem;
