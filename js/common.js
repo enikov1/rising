@@ -129,8 +129,13 @@ const filterScrollPos = () => {
 				catalog_header.classList.add('scroll-active');
 				// catalog_header.setAttribute('style', 'top:'+classHeaderTop.clientHeight+'px; z-index:'+14);
 
+				if(window.outerWidth < 768) {
+					catalog_header.setAttribute('style', 'top:0; z-index:'+14);
+				} else {
+					catalog_header.setAttribute('style', 'top:0; z-index:'+14);
+				}
 				header_wrap.setAttribute('style', 'opacity: 0');
-				catalog_header.setAttribute('style', 'top:0; z-index:'+14);
+				// catalog_header.setAttribute('style', 'top:0; z-index:'+14);
 			}
 		} else {
 			catalog_header.classList.remove('scroll-active');
@@ -148,6 +153,9 @@ const filterScrollPos = () => {
 				// 	sect_header.setAttribute('style', 'top:0; z-index:'+14);
 				// });
 				header_wrap.setAttribute('style', 'opacity: 0');
+
+				
+
 				sect_header.setAttribute('style', 'top:0; z-index:'+14);
 				// if(scrollStatus == true) sect_header.setAttribute('style', styles);
 			}
@@ -205,6 +213,8 @@ if(slider_dom) {
 			SliderMain = new Swiper('#slider', {
 				slidesPerView: 1,
 				spaceBetween: 10,
+				autoplay: true,
+				delay: 5000,
 
 				pagination: {
 					el: '.swiper-page',
@@ -257,6 +267,8 @@ const reviews = new Swiper('#reviews', {
 	slidesPerView: 1,
 	spaceBetween: 20,
 	loop: true,
+	autoplay: true,
+	delay: 8000,
 
 	navigation: {
 		prevEl: '#reviews .swiper-nav-prev',

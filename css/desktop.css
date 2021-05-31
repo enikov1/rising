@@ -14,7 +14,6 @@
     background-size: cover;
   }
   .header > .container {
-    max-width: 1400px;
     width: calc(100% - 40px);
   }
   .header__top .header_bay, .header__top .header_logo {
@@ -236,18 +235,16 @@
     left: 0;
     width: 100%;
     height: 4.75rem;
-    background-color: #D5E4F3;
+    background-color: white;
     z-index: 10;
   }
   .header_fixed .header__top {
-    max-width: 1400px;
     width: calc(100% - 40px);
     position: fixed;
     top: 0;
     left: auto;
     padding: 0.625rem 0;
     z-index: 12;
-    background-color: #D5E4F3;
   }
   .header_menu_active_child .header_menu__child {
     overflow: unset;
@@ -334,6 +331,9 @@
   }
   .benefits__top {
     margin-bottom: 3.25rem;
+    max-width: 37rem;
+  }
+  .benefits__top h2 {
     max-width: 37rem;
   }
   .benefits__bottom {
