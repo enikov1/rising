@@ -697,11 +697,20 @@ const position_sticky_block = document.querySelectorAll('.position-sticky');
 if (position_sticky_block.length) {
     position_sticky_block.forEach(e => {
         stickyEl = new Sticksy('.position-sticky', {
-            topSpacing: 0,
+            topSpacing: 60,
             listen: true,
         });
+        stickyEl.onStateChanged = function(state) {
+                if (state === 'fixed') stickyEl.nodeRef.classList.add('widget--sticky')
+                else stickyEl.nodeRef.classList.remove('widget--sticky')
+            }
+            // var sticky = new Sticky(e);
+
+        console.log(e);
     });
 }
+// var sticky = new Sticky('.position-sticky');
+// Stickyfill.forceSticky(position_sticky_block);
 
 
 
