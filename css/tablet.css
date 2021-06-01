@@ -494,6 +494,9 @@
   .partners h2 {
     margin-bottom: 4rem;
   }
+  .partners h2 br {
+    display: none;
+  }
   .partners__items {
     padding: 0;
     max-width: 100%;
