@@ -978,6 +978,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function Touchyhandler(e) {
     e.preventDefault();
+    // console.log(1);
 }
 
 if (window.outerWidth < 900) {
@@ -986,11 +987,11 @@ if (window.outerWidth < 900) {
     field.forEach(e => {
         e.addEventListener('focus', () => {
             document.querySelector('html').classList.add('overflow-none')
-            document.addEventListener('touchmove', Touchyhandler, false);
+            document.querySelector('body').addEventListener('touchmove', Touchyhandler, { passive: false });
         });
         e.addEventListener('blur', () => {
             document.querySelector('html').classList.remove('overflow-none')
-            document.removeEventListener('touchmove', Touchyhandler);
+            document.querySelector('body').removeEventListener('touchmove', Touchyhandler);
         });
     });
 }
