@@ -1307,7 +1307,8 @@ textarea.field {
   }
 }
 
-.cookie_info__first p, .cookie_info__first button {
+.cookie_info__first p,
+.cookie_info__first button {
   color: white;
   font-size: 0.875rem;
   font-weight: bold;
@@ -1317,6 +1318,10 @@ textarea.field {
   height: 1.25rem;
   color: #E5E8EC;
   border-bottom: 0.0625rem dashed #E5E8EC;
+}
+
+.cookie_info__first .b1:hover {
+  border-color: transparent;
 }
 
 .cookie_info__first .b2 {
@@ -1356,6 +1361,10 @@ textarea.field {
   margin-top: 0.5rem;
   border-bottom: 0.0625rem dashed #E5E8EC;
   white-space: nowrap;
+}
+
+.cookie_info__last a:hover {
+  border-color: transparent;
 }
 
 .cookie_info.cookie_info__show .cookie_info__last {
@@ -2210,6 +2219,10 @@ textarea.field {
   font-weight: 500;
   font-size: 0.75rem;
   text-decoration: underline;
+}
+
+.accordion__item .text a:hover {
+  text-decoration: none;
 }
 
 .accordion__item.active .title button::before {
@@ -3180,6 +3193,10 @@ textarea.field {
   line-height: 130%;
   color: white;
   border-bottom: 0.09375rem solid white;
+}
+
+.researches__item a:hover {
+  border-color: transparent;
 }
 
 .you_know {
@@ -5140,6 +5157,10 @@ textarea.field {
   text-transform: uppercase;
 }
 
+#header_goods_about .header__bottom-right .count:hover {
+  border-color: transparent;
+}
+
 #header_goods_about .header__bottom-right a.button_primary {
   -webkit-box-ordinal-group: 6;
   -webkit-order: 5;
@@ -5195,6 +5216,10 @@ textarea.field {
           align-self: flex-start;
   border-bottom: 0.09375rem solid var(--c-dark);
   margin-bottom: 3.125rem;
+}
+
+#header_goods_about .header__bottom-right .all:hover {
+  border-color: transparent;
 }
 
 #header_goods_about.header_fixed > .container {
@@ -5666,6 +5691,10 @@ textarea.field {
   line-height: 146%;
   font-size: 0.6875rem;
   white-space: nowrap;
+}
+
+.footer__bottom .links a:hover {
+  text-decoration: underline;
 }
 
 .footer__bottom .links a:first-child {
