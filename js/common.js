@@ -1016,18 +1016,18 @@ if (window.outerWidth < 900) {
 
 
 const sect_nav_item = document.querySelectorAll('.sect_nav ul li a');
-sect_nav_item.forEach(item => {
-    item.addEventListener('click', () => {
+if (sect_nav_item) {
+    sect_nav_item.forEach(item => {
+        item.addEventListener('click', () => {
 
-        let parent = item.parentNode;
-        for (let sibling of parent.parentNode.children) {
-            sibling.classList.remove('active');
-        }
-        item.parentNode.classList.add('active');
+            let parent = item.parentNode;
+            for (let sibling of parent.parentNode.children) {
+                sibling.classList.remove('active');
+            }
+            item.parentNode.classList.add('active');
+        });
     });
-});
-
-
+}
 
 document.querySelectorAll('a[href^="#"').forEach(link => {
 
