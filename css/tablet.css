@@ -141,7 +141,7 @@
   }
   .numbers__bottom {
     top: -3.625rem;
-    background: url(../img/section_numbers_bg_x2.jpg) no-repeat top center;
+    background: url(../img/section_numbers_bg_x1.jpg) no-repeat top center;
     background-size: cover;
   }
   .numbers__bottom h2 {
@@ -751,6 +751,8 @@
   .you_know__wrap .image {
     top: -4.5rem;
     left: 3.5rem;
+    width: 30rem;
+    height: 30.6875rem;
   }
   .you_know__wrap .text {
     padding-top: 29.6875rem;
@@ -1250,6 +1252,9 @@
   .page_blog .articles {
     padding: 4.5rem 0;
   }
+  .page_blog.position_scroll::before {
+    height: 7.1875rem;
+  }
   .default_subscribe .subscribe__form {
     padding: 0 5.25rem;
     margin-bottom: 4.5rem;
@@ -1311,6 +1316,9 @@
   }
   .page_research__table .header_links {
     display: none;
+  }
+  .page_research.position_scroll::before {
+    height: 4.25rem;
   }
   .wrap_links {
     margin-bottom: 4.5rem;

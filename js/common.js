@@ -10,6 +10,9 @@ const headerBurger = document.getElementById('header_nav_trigger'),
 const catalog_header = document.querySelector('.catalog__header');
 const sect_header = document.querySelector('.sect_nav');
 
+const page_research = document.querySelector('.page_research');
+const page_blog = document.querySelector('.page_blog');
+
 const headerBurgetActive = () => {
 
 
@@ -158,11 +161,17 @@ const filterScrollPos = () => {
 
                 sect_header.setAttribute('style', 'top:0; z-index:' + 14);
                 // if(scrollStatus == true) sect_header.setAttribute('style', styles);
+                if (page_blog) page_blog.classList.add('position_scroll');
+                if (page_research) page_research.classList.add('position_scroll');
+
             }
         } else {
             sect_header.classList.remove('scroll-active');
             header_wrap.removeAttribute('style');
             sect_header.removeAttribute('style');
+
+            if (page_blog) page_blog.classList.remove('position_scroll');
+            if (page_research) page_research.classList.remove('position_scroll');
         }
     }
 
@@ -1004,3 +1013,38 @@ if (window.outerWidth < 900) {
         });
     });
 }
+
+
+document.querySelectorAll('a[href^="#"').forEach(link => {
+
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        let href = this.getAttribute('href').substring(1);
+
+        if (href) {
+            const scrollTarget = document.getElementById(href);
+
+            const topOffsetSectNav = document.querySelector('.sect_nav');
+            const topOffsetHeader = document.querySelector('.header__top');
+            // const topOffsetHeaderFixed = document.querySelector('.product_header_fixed');
+            let topOffset = 0;
+            // const topOffset = 0; // если не нужен отступ сверху 
+            if (topOffsetSectNav) {
+                topOffset = topOffsetSectNav.offsetHeight;
+            }
+            // if (topOffsetHeader) topOffset = topOffsetHeader.offsetHeight;
+            // if (topOffsetHeaderFixed) topOffset = topOffsetHeaderFixed.offsetHeight;
+            // console.log(topOffset);
+            const elementPosition = scrollTarget.getBoundingClientRect().top;
+            const offsetPosition = elementPosition - topOffset;
+
+            window.scrollBy({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+
+
+    });
+});

@@ -409,7 +409,7 @@ h2 {
 .header {
   width: 100%;
   height: 100vh;
-  background: url(../img/header_bg_x1.jpg) no-repeat top center;
+  background: url(../img/header_bg_x1_.jpg) no-repeat top center;
   background-size: cover;
 }
 
@@ -1459,20 +1459,10 @@ textarea.field {
   position: relative;
   z-index: -1;
   top: -2rem;
-  background: url(../img/section_numbers_bg_x1.jpg) no-repeat top center;
-  background-size: 100%;
+  background: url(../img/section_numbers_bg_x1.jpg) no-repeat top right;
+  background-size: cover;
   padding-top: 5.8125rem;
   padding-bottom: 4rem;
-}
-
-.numbers__bottom::before {
-  content: "";
-  position: absolute;
-  top: -7.4375rem;
-  left: 0;
-  width: 100%;
-  height: 7.5rem;
-  background-color: #157C69;
 }
 
 .numbers__bottom h2 {
@@ -3187,6 +3177,8 @@ textarea.field {
   position: absolute;
   top: -9.75rem;
   left: 0;
+  width: 16.6875rem;
+  height: 15.625rem;
 }
 
 .you_know__wrap .image img {
@@ -4238,6 +4230,17 @@ textarea.field {
   padding: 3rem 0 4rem 0;
 }
 
+.page_blog.position_scroll {
+  position: relative;
+}
+
+.page_blog.position_scroll::before {
+  content: "";
+  height: 7.3125rem;
+  width: 100%;
+  display: block;
+}
+
 .default_subscribe .subscribe__form {
   margin-bottom: 3.25rem;
 }
@@ -4610,6 +4613,17 @@ textarea.field {
 
 .page_research__table .header_links a.active {
   border-color: var(--c-accent);
+}
+
+.page_research.position_scroll {
+  position: relative;
+}
+
+.page_research.position_scroll::before {
+  content: "";
+  height: 4.3125rem;
+  width: 100%;
+  display: block;
 }
 
 .wrap_links {

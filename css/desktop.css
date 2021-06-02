@@ -10,13 +10,14 @@
   }
   .header {
     height: 58.75rem;
-    background: url(../img/header_bg_x3.jpg) no-repeat top center;
+    background: url(../img/header_bg_x1_.jpg) no-repeat top center;
     background-size: cover;
   }
   .header > .container {
     width: calc(100% - 40px);
   }
-  .header__top .header_bay, .header__top .header_logo {
+  .header__top .header_bay,
+  .header__top .header_logo {
     -webkit-flex-basis: 33%;
         -ms-flex-preferred-size: 33%;
             flex-basis: 33%;
@@ -51,7 +52,9 @@
     position: relative;
     margin-top: 6.25rem;
   }
-  .header__bottom h1, .header__bottom p, .header__bottom a {
+  .header__bottom h1,
+  .header__bottom p,
+  .header__bottom a {
     position: relative;
     z-index: 1;
   }
@@ -304,7 +307,7 @@
   .numbers__bottom {
     top: auto;
     z-index: 1;
-    background: url(../img/section_numbers_bg_x3.jpg) no-repeat top center;
+    background: url(../img/section_numbers_bg_x1.jpg) no-repeat top center;
     background-size: cover;
   }
   .numbers__bottom::before {
@@ -927,6 +930,8 @@
   .you_know__wrap .image {
     top: -6.25rem;
     left: 0;
+    width: 26.3125rem;
+    height: 32.125rem;
   }
   .you_know__wrap .text {
     position: absolute;
@@ -1267,6 +1272,9 @@
   .page_blog .articles .item__top {
     height: 18.75rem;
   }
+  .page_blog.position_scroll::before {
+    height: 4.625rem;
+  }
   .default_subscribe .subscribe__form {
     padding: 0;
     max-width: 37.5rem;
@@ -1375,6 +1383,9 @@
   }
   .page_research__table .header_links {
     display: none;
+  }
+  .page_research.position_scroll::before {
+    height: 4.25rem;
   }
   .wrap_links {
     margin-bottom: 0;
