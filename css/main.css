@@ -167,6 +167,8 @@ p {
   line-height: 152%;
   letter-spacing: -0.0125rem;
   color: var(--c-paragraph);
+  -webkit-font-feature-settings: 'pnum' on, 'lnum' on;
+          font-feature-settings: 'pnum' on, 'lnum' on;
 }
 
 body {
@@ -394,6 +396,8 @@ h2 {
   line-height: 148%;
   letter-spacing: 0.0125rem;
   font-weight: 500;
+  -webkit-font-feature-settings: 'pnum' on, 'lnum' on;
+          font-feature-settings: 'pnum' on, 'lnum' on;
 }
 
 @media (max-width: 340px) {
@@ -2541,9 +2545,6 @@ textarea.field {
 }
 
 .partners__items .item a img {
-  -webkit-transition: all 100ms ease;
-  -o-transition: all 100ms ease;
-  transition: all 100ms ease;
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
 }
@@ -2551,6 +2552,18 @@ textarea.field {
 .partners__items .item a:hover img {
   -webkit-filter: grayscale(0%);
           filter: grayscale(0%);
+}
+
+.logo_b1 {
+  display: block;
+  height: 100%;
+  background: url(../img/partners/logo-wildberries1-min.png) no-repeat;
+  background-size: 100%;
+}
+
+.logo_b1:hover {
+  background: url(../img/partners/logo-wildberries2-min.png) no-repeat;
+  background-size: 100%;
 }
 
 .feedback {
@@ -3153,6 +3166,8 @@ textarea.field {
   font-size: 1.5rem;
   line-height: 132%;
   color: white;
+  -webkit-font-feature-settings: 'pnum' on, 'lnum' on;
+          font-feature-settings: 'pnum' on, 'lnum' on;
 }
 
 .researches__item a {
@@ -3427,6 +3442,8 @@ textarea.field {
   font-size: 1.25rem;
   line-height: 150%;
   font-family: "Merriweather";
+  -webkit-font-feature-settings: 'pnum' on, 'lnum' on;
+          font-feature-settings: 'pnum' on, 'lnum' on;
 }
 
 .product_header_fixed__right {
