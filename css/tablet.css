@@ -1522,13 +1522,14 @@
   #header_goods_about .header__top {
     margin-left: 66px;
     margin-right: 66px;
+    margin-top: 0;
   }
   #header_goods_about .header__bottom {
     margin-top: 2.5rem;
   }
   #header_goods_about .header__bottom-left {
     height: 46.4375rem;
-    background: url(../img/page_goods_about/header_bg_x2.jpg) no-repeat top center;
+    background: url(../img/page_goods_about/bg_gooda.jpg) no-repeat top center;
     background-size: cover;
     padding-bottom: 8.625rem;
     padding-top: 1.25rem;

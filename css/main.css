@@ -3054,6 +3054,7 @@ textarea.field {
 
 .researches .parallax_overlay img {
   width: 100%;
+  height: 100%;
   background-size: cover;
 }
 
@@ -4983,7 +4984,7 @@ textarea.field {
 #header_goods_about .header__top {
   margin-left: 20px;
   margin-right: 20px;
-  margin-top: 0;
+  margin-top: 0.625rem;
 }
 
 #header_goods_about .header__bottom {
@@ -5010,7 +5011,7 @@ textarea.field {
   position: relative;
   width: 100%;
   height: 18.625rem;
-  background: url(../img/page_goods_about/header_bg_x1.jpg) no-repeat top center;
+  background: url(../img/page_goods_about/bg_gooda.jpg) no-repeat 50% 55%;
   background-size: cover;
   display: -webkit-box;
   display: -webkit-flex;
