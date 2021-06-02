@@ -47,6 +47,17 @@
     position: relative;
     top: auto;
   }
+  .header__bottom p {
+    max-width: 36.125rem;
+  }
+  .header .abs {
+    position: relative;
+    top: auto;
+    left: auto;
+  }
+  .header .title_abs {
+    margin-top: auto;
+  }
   .header_burger {
     width: 4.625rem;
     height: 4.625rem;
