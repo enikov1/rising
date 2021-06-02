@@ -1015,6 +1015,20 @@ if (window.outerWidth < 900) {
 }
 
 
+const sect_nav_item = document.querySelectorAll('.sect_nav ul li a');
+sect_nav_item.forEach(item => {
+    item.addEventListener('click', () => {
+
+        let parent = item.parentNode;
+        for (let sibling of parent.parentNode.children) {
+            sibling.classList.remove('active');
+        }
+        item.parentNode.classList.add('active');
+    });
+});
+
+
+
 document.querySelectorAll('a[href^="#"').forEach(link => {
 
     link.addEventListener('click', function(e) {
@@ -1027,15 +1041,10 @@ document.querySelectorAll('a[href^="#"').forEach(link => {
 
             const topOffsetSectNav = document.querySelector('.sect_nav');
             const topOffsetHeader = document.querySelector('.header__top');
-            // const topOffsetHeaderFixed = document.querySelector('.product_header_fixed');
             let topOffset = 0;
-            // const topOffset = 0; // если не нужен отступ сверху 
             if (topOffsetSectNav) {
                 topOffset = topOffsetSectNav.offsetHeight;
             }
-            // if (topOffsetHeader) topOffset = topOffsetHeader.offsetHeight;
-            // if (topOffsetHeaderFixed) topOffset = topOffsetHeaderFixed.offsetHeight;
-            // console.log(topOffset);
             const elementPosition = scrollTarget.getBoundingClientRect().top;
             const offsetPosition = elementPosition - topOffset;
 
