@@ -307,6 +307,18 @@ setTimeout(() => {
     });
 }, 300);
 
+document.addEventListener('resize', () => {
+    [].forEach.call(reviews.slides, function(slide) {
+        slide.style.height = "";
+    });
+
+    setTimeout(() => {
+        [].forEach.call(reviews.slides, function(slide) {
+            slide.style.height = wrapper.clientHeight + "px";
+        });
+    }, 300);
+});
+
 // facts
 
 const facts = new Swiper('#facts', {

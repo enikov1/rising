@@ -363,6 +363,11 @@
   .swiper-nav-prev i, .swiper-nav-next i {
     font-size: 2.375rem;
   }
+  .swiper-nav-prev i::before, .swiper-nav-next i::before {
+    -webkit-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+  }
   .swiper-nav-prev:hover i::before, .swiper-nav-next:hover i::before {
     color: black;
   }
@@ -807,6 +812,7 @@
   }
   .questions__right .accordion__item .title span {
     font-size: 0.9375rem;
+    max-width: 100%;
   }
   .other_product {
     padding: 4.5rem 0;
