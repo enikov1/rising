@@ -296,18 +296,7 @@ const reviews = new Swiper('#reviews', {
 });
 
 const wrapper = reviews.wrapperEl;
-
-[].forEach.call(reviews.slides, function(slide) {
-    slide.style.height = "";
-});
-
-setTimeout(() => {
-    [].forEach.call(reviews.slides, function(slide) {
-        slide.style.height = wrapper.clientHeight + "px";
-    });
-}, 300);
-
-document.addEventListener('resize', () => {
+if (wrapper) {
     [].forEach.call(reviews.slides, function(slide) {
         slide.style.height = "";
     });
@@ -317,7 +306,20 @@ document.addEventListener('resize', () => {
             slide.style.height = wrapper.clientHeight + "px";
         });
     }, 300);
-});
+
+    document.addEventListener('resize', () => {
+        [].forEach.call(reviews.slides, function(slide) {
+            slide.style.height = "";
+        });
+
+        setTimeout(() => {
+            [].forEach.call(reviews.slides, function(slide) {
+                slide.style.height = wrapper.clientHeight + "px";
+            });
+        }, 300);
+    });
+}
+
 
 // facts
 
