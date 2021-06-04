@@ -62,6 +62,7 @@ textarea {
   src: local("Mplus 1p Light"), local("Mplus1p-Light"), url("../fonts/Mplus1p/Mplus1p-Light.woff2") format("woff2"), url("../fonts/Mplus1p/Mplus1p-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -93,6 +94,7 @@ textarea {
   src: local("Mplus 1p Bold"), local("Mplus1p-Bold"), url("../fonts/Mplus1p/Mplus1p-Bold.woff2") format("woff2"), url("../fonts/Mplus1p/Mplus1p-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
