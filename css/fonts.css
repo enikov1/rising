@@ -35,6 +35,7 @@
   src: local("Mplus 1p Bold"), local("Mplus1p-Bold"), url("../fonts/Mplus1p/Mplus1p-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
