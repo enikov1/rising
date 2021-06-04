@@ -59,39 +59,38 @@ textarea {
 
 @font-face {
   font-family: 'Mplus 1p';
-  font-display: swap;
   src: local("Mplus 1p Light"), local("Mplus1p-Light"), url("../fonts/Mplus1p/Mplus1p-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Mplus 1p';
-  font-display: swap;
   src: local("Mplus 1p"), local("Mplus1p-Regular"), url("../fonts/Mplus1p/Mplus1p-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Mplus 1p';
-  font-display: swap;
   src: local("Mplus 1p Medium"), local("Mplus1p-Medium"), url("../fonts/Mplus1p/Mplus1p-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Mplus 1p';
-  font-display: swap;
   src: local("Mplus 1p ExtraBold"), local("Mplus1p-ExtraBold"), url("../fonts/Mplus1p/Mplus1p-ExtraBold.woff") format("woff");
   font-weight: 800;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Mplus 1p';
-  font-display: swap;
   src: local("Mplus 1p Bold"), local("Mplus1p-Bold"), url("../fonts/Mplus1p/Mplus1p-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
@@ -99,26 +98,26 @@ textarea {
 
 @font-face {
   font-family: 'Merriweather';
-  font-display: swap;
   src: local("Merriweather Regular"), local("Merriweather-Regular"), url("../fonts/Merriweather/Merriweather-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Merriweather';
-  font-display: swap;
   src: local("Merriweather Light"), local("Merriweather-Light"), url("../fonts/Merriweather/Merriweather-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Roboto';
-  font-display: swap;
   src: local("Roboto"), local("Roboto-Regular"), url("../fonts/Roboto/Roboto-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 :root {
