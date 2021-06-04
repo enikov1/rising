@@ -3669,6 +3669,10 @@ textarea.field {
   padding-top: 0.625rem;
 }
 
+.catalog__header.scroll-active .catalog__header-links {
+  margin-bottom: 0;
+}
+
 .catalog__info {
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 100%;
@@ -3838,6 +3842,13 @@ textarea.field {
 
 .catalog__right .product_item {
   width: calc((100% - 0.8rem) / 2);
+}
+
+.catalog.scroll-buffer::before {
+  content: "";
+  height: 7.4375rem;
+  width: 100%;
+  display: block;
 }
 
 .product_item {
