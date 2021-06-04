@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <title>Store</title>
-    <link rel="preload" href="css/fonts.min.css" as="style">
+    <link rel="preload" href="css/fonts.min.css" as="style" onload="this.rel='stylesheet'">
     <link rel="stylesheet" href="css/main.min.css">
     <link rel="stylesheet" href="css/tablet.min.css" media="(min-width: 768px)">
     <link rel="stylesheet" href="css/desktop.min.css" media="(min-width: 1200px)">
@@ -56,7 +56,7 @@
               </ul>
             </div>
           </div>
-          <div class="header_logo"><a class="logo" href="#"><img class="lazyload" data-src="./img/logo.svg" alt="image"></a></div>
+          <div class="header_logo"><a class="logo" href="#"><img src="./img/logo.svg" alt="image"></a></div>
           <div class="header_bay"><a class="icon" href="#"><i class="icon-bay"></i></a><a class="button_primary" href="#">Купить у партнера</a></div>
         </div>
         <div class="header__bottom">
@@ -270,7 +270,7 @@
         <p>Мы используем файлы cookie  для подбора подходящих вам товаров, аналитики и рекламы.</p><a href="#">Наша политика конфиденциальности</a>
       </div>
     </div>
-    <script src="./libs/libs.js"></script>
+    <script src="./libs/libs.js" async></script>
     <script src="./js/common.js"></script>
   </body>
 </html>
