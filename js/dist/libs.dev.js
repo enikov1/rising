@@ -9763,8 +9763,6 @@ if (position_sticky_block.length) {
       if (state === 'fixed') stickyEl.nodeRef.classList.add('widget--sticky');else stickyEl.nodeRef.classList.remove('widget--sticky');
     }; // var sticky = new Sticky(e);
 
-
-    console.log(e);
   });
 } // var sticky = new Sticky('.position-sticky');
 // Stickyfill.forceSticky(position_sticky_block);
@@ -10326,4 +10324,4 @@ setTimeout(function () {
       }
     });
   }
-}, 1000);
+}, 2000);
