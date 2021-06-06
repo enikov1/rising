@@ -507,8 +507,6 @@ if (position_sticky_block.length) {
                 else stickyEl.nodeRef.classList.remove('widget--sticky')
             }
             // var sticky = new Sticky(e);
-
-        console.log(e);
     });
 }
 // var sticky = new Sticky('.position-sticky');
