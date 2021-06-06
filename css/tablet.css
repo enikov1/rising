@@ -30,6 +30,8 @@
   }
   .header {
     height: auto;
+    background: url(../img/header_bg_x2.jpg) no-repeat top center;
+    background-size: cover;
   }
   .header .logo {
     width: 12.75rem;
@@ -141,7 +143,7 @@
   }
   .numbers__bottom {
     top: -3.625rem;
-    background: url(../img/section_numbers_bg_x1.jpg) no-repeat top center;
+    background: url(../img/section_numbers_bg_x2.jpg) no-repeat top center;
     background-size: cover;
   }
   .numbers__bottom h2 {
@@ -1546,8 +1548,25 @@
     background-color: #F7FAFF;
   }
   #header_goods_about .header__bottom-left .swiper-overlay .swiper-container {
-    padding-bottom: 4.375rem;
+    padding-bottom: 8.125rem;
     margin-top: 7.8125rem;
+  }
+  #header_goods_about .header__bottom-left .swiper-overlay .swiper-wrapper {
+    width: 28.125rem;
+  }
+  #header_goods_about .header__bottom-left .swiper-overlay .swiper-slide {
+    width: 28.125rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #header_goods_about .header__bottom-left .swiper-overlay .swiper-slide img {
+    width: 100%;
   }
   #header_goods_about .header__bottom-left .swiper-nav {
     bottom: 0.625rem;

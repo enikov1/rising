@@ -415,7 +415,7 @@ h2 {
 .header {
   width: 100%;
   height: 100vh;
-  background: url(../img/header_bg_x1_.jpg) no-repeat top center;
+  background: url(../img/header_bg_x1.jpg) no-repeat top center;
   background-size: cover;
 }
 
@@ -1700,7 +1700,6 @@ textarea.field {
   content: "";
   position: absolute;
   top: -0.625rem;
-  left: -0.625rem;
   width: 13.75rem;
   height: 13.75rem;
   border-radius: 50%;
@@ -1726,6 +1725,18 @@ textarea.field {
 .products__items .item__image {
   position: relative;
   margin-bottom: 1.25rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.products__items .item__image img {
+  height: 12.5rem;
 }
 
 .products__items .item__info {
@@ -1871,6 +1882,12 @@ textarea.field {
           justify-content: center;
   padding: 0.3125rem;
   background-color: #C2E2D7;
+}
+
+.review__item-bottom .image img {
+  width: 100%;
+  max-width: 4.75rem;
+  height: auto;
 }
 
 .user_info {
@@ -4994,6 +5011,7 @@ textarea.field {
 #header_info h1 {
   font-size: 1.375rem;
   font-weight: normal;
+  max-width: 100%;
 }
 
 #header_info .header__bottom {
@@ -5074,6 +5092,7 @@ textarea.field {
   font-size: 1.375rem;
   font-weight: normal;
   margin-bottom: 1.25rem;
+  max-width: 100%;
 }
 
 #header_goods_about {
@@ -5158,9 +5177,29 @@ textarea.field {
   margin-top: 3.75rem;
 }
 
+#header_goods_about .header__bottom-left .swiper-overlay .swiper-wrapper {
+  width: 15.625rem;
+}
+
+#header_goods_about .header__bottom-left .swiper-overlay .swiper-slide {
+  width: 15.625rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#header_goods_about .header__bottom-left .swiper-overlay .swiper-slide img {
+  width: 100%;
+}
+
 #header_goods_about .header__bottom-left .swiper-nav {
   position: absolute;
-  bottom: 0.625rem;
+  bottom: 1.25rem;
   left: 50%;
   margin-left: -2.125rem;
 }

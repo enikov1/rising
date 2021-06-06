@@ -150,7 +150,10 @@
       </div>
     </section>
     <section class="researches">
-      <picture class="parallax_overlay"><img class="lazyload" data-src="./img/page_goods_about/bg_goods_research.jpg" alt="image"></picture>
+      <picture class="parallax_overlay">
+        <source srcset="./img/page_goods_about/bg_goods_research.jpg" media="(min-width: 1200px)">
+        <source srcset="./img/page_goods_about/research_bg_x2.jpg" media="(min-width: 768px)"><img class="lazyload" data-src="./img/page_goods_about/research_bg_x1.jpg" alt="image">
+      </picture>
       <div class="container">
         <div class="researches__left">
           <h3>Исследования</h3><a href="#">Посмотреть больше исследований</a>
@@ -352,25 +355,41 @@
         <div class="swiper-container" id="other_product">
           <div class="swiper-wrapper">
             <div class="swiper-slide"><a class="product_item" href="#">
-                <div class="product_item__image"><img class="lazyload" data-src="./img/product/item1.png" alt="image"></div>
+                <div class="product_item__image">
+                  <picture>
+                    <source data-srcset="./img/product/item1_x2.png" media="(min-width: 768px)"><img class="lazyload" data-src="./img/product/item1_x1.png" alt="image">
+                  </picture>
+                </div>
                 <div class="product_item__text">
                   <h3>Комплекс витаминов K2 и D3</h3>
                   <p>Mena Q7 PharmaPure, Витамин К2, Витамин D3</p>
                 </div></a></div>
             <div class="swiper-slide"><a class="product_item" href="#">
-                <div class="product_item__image"><img class="lazyload" data-src="./img/product/item2.png" alt="image"></div>
+                <div class="product_item__image">
+                  <picture>
+                    <source data-srcset="./img/product/item2_x2.png" media="(min-width: 768px)"><img class="lazyload" data-src="./img/product/item2_x1.png" alt="image">
+                  </picture>
+                </div>
                 <div class="product_item__text">
                   <h3>Комплекс витаминов K2 и D3</h3>
                   <p>Mena Q7 PharmaPure, Витамин К2, Витамин D3</p>
                 </div></a></div>
             <div class="swiper-slide"><a class="product_item" href="#">
-                <div class="product_item__image"><img class="lazyload" data-src="./img/product/item3.png" alt="image"></div>
+                <div class="product_item__image">
+                  <picture>
+                    <source data-srcset="./img/product/item3_x2.png" media="(min-width: 768px)"><img class="lazyload" data-src="./img/product/item3_x1.png" alt="image">
+                  </picture>
+                </div>
                 <div class="product_item__text">
                   <h3>Комплекс витаминов K2 и D3</h3>
                   <p>Mena Q7 PharmaPure, Витамин К2, Витамин D3</p>
                 </div></a></div>
             <div class="swiper-slide"><a class="product_item" href="#">
-                <div class="product_item__image"><img class="lazyload" data-src="./img/product/item4.png" alt="image"></div>
+                <div class="product_item__image">
+                  <picture>
+                    <source data-srcset="./img/product/item4_x2.png" media="(min-width: 768px)"><img class="lazyload" data-src="./img/product/item4_x1.png" alt="image">
+                  </picture>
+                </div>
                 <div class="product_item__text">
                   <h3>Комплекс витаминов K2 и D3</h3>
                   <p>Mena Q7 PharmaPure, Витамин К2, Витамин D3</p>
@@ -585,6 +604,6 @@
       </div>
       <p class="text">Нажимая «Отправить», вы даете свое согласие на обработку <a href="#">персональных данных</a></p>
     </div>
-    <script src="./libs/libs.js" defer></script>
+    <script src="./js/libs.js" defer></script>
   </body>
 </html>
