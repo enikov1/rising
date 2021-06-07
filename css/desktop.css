@@ -217,7 +217,7 @@
     display: flex;
   }
   .header_menu__list > ul > li a {
-    font-weight: bold;
+    font-weight: 700;
     text-transform: uppercase;
   }
   .header_menu__list > ul > li a i {
