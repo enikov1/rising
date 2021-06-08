@@ -3946,9 +3946,7 @@ textarea.field {
 }
 
 .product_item__image img {
-  width: 13.1875rem;
-  -o-object-fit: cover;
-     object-fit: cover;
+  height: 10.25rem;
 }
 
 .product_item__text h3, .product_item__text p {
@@ -4984,39 +4982,25 @@ textarea.field {
   position: relative;
 }
 
-#header_info > .container::before, #header_info > .container::after {
-  content: "";
-  position: absolute;
-  pointer-events: none;
-}
-
-#header_info > .container::before {
-  bottom: 0;
-  left: -1.25rem;
-  background: url(../img/page_info/header_i_left_x1.png) top center;
-  background-size: 100%;
-  width: 5.6875rem;
-  height: 15.125rem;
-}
-
-#header_info > .container::after {
-  bottom: -4.375rem;
-  right: -1.25rem;
-  background: url(../img/page_info/header_i_right_x1.png) top center;
-  background-size: 100%;
-  width: 5.6875rem;
-  height: 15.125rem;
-}
-
 #header_info h1 {
   font-size: 1.375rem;
   font-weight: normal;
   max-width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 #header_info .header__bottom {
   margin-top: 2.75rem;
   padding-bottom: 0;
+}
+
+#header_info .image {
+  position: absolute;
+  bottom: -2.5rem;
+  left: -1.5rem;
+  width: 100%;
+  z-index: 0;
 }
 
 #header_sertirications {
@@ -5639,9 +5623,7 @@ textarea.field {
 }
 
 .slider_product__item .image img {
-  position: absolute;
-  top: -0.75rem;
-  width: 7rem;
+  width: 100%;
   height: 8rem;
   -o-object-fit: cover;
      object-fit: cover;

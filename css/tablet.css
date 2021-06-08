@@ -1447,22 +1447,6 @@
   #header_info > .container {
     position: relative;
   }
-  #header_info > .container::before {
-    bottom: 0;
-    left: -3.75rem;
-    background: url(../img/page_info/header_i_left_x2.png) top center;
-    background-size: 100%;
-    width: 7.875rem;
-    height: 16.625rem;
-  }
-  #header_info > .container::after {
-    bottom: 0.625rem;
-    right: -3.75rem;
-    background: url(../img/page_info/header_i_right_x2.png) top center;
-    background-size: 100%;
-    width: 6.5rem;
-    height: 12.3125rem;
-  }
   #header_info h1 {
     font-size: 2.5rem;
     font-weight: normal;

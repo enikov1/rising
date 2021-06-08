@@ -1232,6 +1232,10 @@
   .product_item__subcat {
     font-size: 0.75rem;
   }
+  .product_item__image img {
+    width: 13.1875rem;
+    height: auto;
+  }
   .page_wrap > .container {
     padding: 0 12.5rem;
   }
@@ -1591,6 +1595,9 @@
   #header_info h1 {
     font-size: 2.75rem;
     max-width: 49.375rem;
+  }
+  #header_info .image {
+    display: none;
   }
   #header_sertirications {
     height: 26.9375rem;
