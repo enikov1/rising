@@ -508,7 +508,7 @@ if (position_sticky_block.length) {
             }
             // var sticky = new Sticky(e);
 
-        console.log(e);
+        // console.log(e);
     });
 }
 // var sticky = new Sticky('.position-sticky');
@@ -693,65 +693,7 @@ setTimeout(() => {
 
 	});
 
-	// Slider
-
-	const slider_dom = document.querySelector('#slider');
-
-	if (slider_dom) {
-		let SliderMain = null,
-			mediaQuerySize = 1200;
-
-		const sliderMainInit = () => {
-			if (!SliderMain) {
-				SliderMain = new Swiper('#slider', {
-					slidesPerView: 1,
-					spaceBetween: 10,
-					loop: true,
-					autoplay: {
-						delay: 5000
-					},
-
-					pagination: {
-						el: '.swiper-page',
-						clickable: true
-					},
-
-					breakpoints: {
-						1200: {
-							slidesPerView: 3,
-							spaceBetween: 127,
-						}
-					}
-				});
-			}
-		};
-
-		const sliderMainDestroy = () => {
-			if (SliderMain) {
-				SliderMain.destroy();
-				SliderMain = null;
-			}
-		}
-
-		window.addEventListener('load', () => {
-			let windowWidthSlide = window.outerWidth;
-			if (windowWidthSlide <= mediaQuerySize) {
-				sliderMainInit();
-			} else {
-				sliderMainDestroy();
-			}
-		});
-
-		window.addEventListener('resize', () => {
-			let windowWidthSlide = window.outerWidth;
-			if (windowWidthSlide <= mediaQuerySize) {
-				// console.log(2);
-				sliderMainInit();
-			} else {
-				sliderMainDestroy();
-			}
-		});
-	}
+	
 
 	// reviews
 
@@ -903,7 +845,75 @@ setTimeout(() => {
 		});
 	}, 300);
 
-	const other_product = document.querySelector('#other_product');
+	
+
+	
+
+	
+
+}, 1000);
+
+// Slider
+
+	const slider_dom = document.querySelector('#slider');
+
+	if (slider_dom) {
+		let SliderMain = null,
+			mediaQuerySize = 1200;
+
+		const sliderMainInit = () => {
+			if (!SliderMain) {
+				SliderMain = new Swiper('#slider', {
+					slidesPerView: 1,
+					spaceBetween: 10,
+					loop: true,
+					autoplay: {
+						delay: 5000
+					},
+
+					pagination: {
+						el: '.swiper-page',
+						clickable: true
+					},
+
+					breakpoints: {
+						1200: {
+							slidesPerView: 3,
+							spaceBetween: 127,
+						}
+					}
+				});
+			}
+		};
+
+		const sliderMainDestroy = () => {
+			if (SliderMain) {
+				SliderMain.destroy();
+				SliderMain = null;
+			}
+		}
+
+		window.addEventListener('load', () => {
+			let windowWidthSlide = window.outerWidth;
+			if (windowWidthSlide <= mediaQuerySize) {
+				sliderMainInit();
+			} else {
+				sliderMainDestroy();
+			}
+		});
+
+		window.addEventListener('resize', () => {
+			let windowWidthSlide = window.outerWidth;
+			if (windowWidthSlide <= mediaQuerySize) {
+				// console.log(2);
+				sliderMainInit();
+			} else {
+				sliderMainDestroy();
+			}
+		});
+	}
+
+const other_product = document.querySelector('#other_product');
 
 	if (other_product) {
 		let SliderOtherProduct = null,
@@ -957,7 +967,7 @@ setTimeout(() => {
 		});
 	}
 
-	// slider_article
+// slider_article
 
 	const slider_article = document.querySelector('#slider_article');
 
@@ -1006,7 +1016,7 @@ setTimeout(() => {
 		});
 	}
 
-	// articles slider
+// articles slider
 
 	const aside_article_items = document.querySelector('#aside_article_items');
 
@@ -1063,8 +1073,7 @@ setTimeout(() => {
 		});
 	}
 
-
-	// articles slider
+// articles slider
 
 	const aside_product_items = document.querySelector('#aside_product_items');
 
@@ -1120,4 +1129,3 @@ setTimeout(() => {
 			}
 		});
 	}
-}, 1000);

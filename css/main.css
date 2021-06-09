@@ -2322,6 +2322,7 @@ textarea.field {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  height: 10.25rem;
 }
 
 .articles__items .item__bottom .subtitle {

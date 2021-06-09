@@ -445,6 +445,9 @@
   .articles__items .item__top {
     height: 20.25rem;
   }
+  .articles__items .item__top img {
+    height: auto !important;
+  }
   .articles__items .item__bottom .inside_title {
     font-size: 1.5rem;
     letter-spacing: 0.125rem;
