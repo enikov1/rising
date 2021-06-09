@@ -2090,6 +2090,20 @@ textarea.field {
 .sertifications__items .item__image {
   width: 8.25rem;
   height: 8.25rem;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: var(--c-light-blue);
   margin-bottom: 1.25rem;
 }
 
