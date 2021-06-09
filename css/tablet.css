@@ -446,7 +446,7 @@
     height: 20.25rem;
   }
   .articles__items .item__top img {
-    height: auto !important;
+    height: 20.25rem !important;
   }
   .articles__items .item__bottom .inside_title {
     font-size: 1.5rem;

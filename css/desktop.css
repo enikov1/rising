@@ -551,7 +551,10 @@
     margin-right: 0;
   }
   .articles__items .item__top {
-    height: 11.875rem;
+    height: 18.75rem;
+  }
+  .articles__items .item__top img {
+    height: 18.75rem !important;
   }
   .subscribe {
     padding: 5.25rem 0;
