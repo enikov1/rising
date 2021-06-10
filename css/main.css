@@ -3423,8 +3423,8 @@ textarea.field {
 }
 
 .other_product .product_item__image img {
-  width: 12.5rem;
   margin-top: 0.5rem;
+  height: 12.5rem;
 }
 
 .other_product .product_item__image::before {
@@ -4012,6 +4012,14 @@ textarea.field {
   margin-right: 1.25rem;
 }
 
+.page_nav ul li:first-child {
+  margin-right: 0.625rem;
+}
+
+.page_nav ul li:nth-child(8) {
+  margin-right: 0.625rem;
+}
+
 .page_nav ul li:last-child {
   margin-right: 0;
 }
@@ -4020,7 +4028,7 @@ textarea.field {
   font-weight: 800;
   line-height: 144%;
   color: var(--c-accent);
-  font-size: 0.6875rem;
+  font-size: 0.875rem;
 }
 
 .page_nav ul li a {
@@ -4044,7 +4052,7 @@ textarea.field {
 
 .page_nav ul li .arrow i {
   color: var(--c-accent);
-  font-size: 1.125rem;
+  font-size: 1.5rem;
   font-weight: 800;
 }
 
@@ -5094,6 +5102,13 @@ textarea.field {
   max-width: 100%;
 }
 
+@media only screen and (-Webkit-min-device-pixel-ratio: 1.5), only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3 / 2), only screen and (min-device-pixel-ratio: 1.5) {
+  #header_store {
+    background: url(../img/page_store/header_bg_x2.jpg) no-repeat;
+    background-size: cover;
+  }
+}
+
 #header_goods_about {
   height: auto;
   background: none;
@@ -5376,6 +5391,13 @@ textarea.field {
   max-width: 15.5rem;
   margin-top: 1.75rem;
   margin-bottom: 5.5rem;
+}
+
+@media only screen and (-Webkit-min-device-pixel-ratio: 1.5), only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3 / 2), only screen and (min-device-pixel-ratio: 1.5) {
+  #header_review {
+    background: url(../img/page_review/header_bg_x2.jpg) no-repeat;
+    background-size: cover;
+  }
 }
 
 #header_faq {

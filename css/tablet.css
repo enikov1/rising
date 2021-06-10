@@ -858,6 +858,9 @@
   .other_product .product_item {
     padding: 0;
   }
+  .other_product .product_item img {
+    width: auto;
+  }
   .other_product .product_item__text h3 {
     font-size: 1.125rem;
     max-width: 13.125rem;
